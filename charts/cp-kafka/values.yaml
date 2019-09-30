@@ -101,6 +101,8 @@ nodeSelector: {}
 ## Ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
 tolerations: {}
 
+affinity: {}
+
 ## Monitoring
 ## Kafka JMX Settings
 ## ref: https://docs.confluent.io/current/kafka/monitoring.html
