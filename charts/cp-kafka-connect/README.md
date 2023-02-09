@@ -93,7 +93,7 @@ The configuration parameters in this section control the resources requested and
 | Parameter | Description | Default |
 | --------- | ----------- | ------- |
 | `image` | Docker Image of Confluent Kafka Connect. | `confluentinc/cp-kafka-connect` |
-| `imageTag` | Docker Image Tag of Confluent Kafka Connect. | `5.4.1` |
+| `imageTag` | Docker Image Tag of Confluent Kafka Connect. | `6.1.0` |
 | `imagePullPolicy` | Docker Image Tag of Confluent Kafka Connect. | `IfNotPresent` |
 | `imagePullSecrets` | Secrets to be used for private registries. | see [values.yaml](values.yaml) for details |
 
@@ -101,7 +101,7 @@ The configuration parameters in this section control the resources requested and
 
 | Parameter | Description | Default |
 | --------- | ----------- | ------- |
-| `servicePort` | The port on which the Kafka Connect will be available and serving requests. | `8082` |
+| `servicePort` | The port on which the Kafka Connect will be available and serving requests. | `8083` |
 
 ### Kafka Connect Worker Configurations
 
@@ -160,6 +160,13 @@ The configuration parameters in this section control the resources requested and
 | `prometheus.jmx.imagePullPolicy` | Docker Image Pull Policy for Prometheus JMX Exporter container. | `IfNotPresent` |
 | `prometheus.jmx.port` | JMX Exporter Port which exposes metrics in Prometheus format for scraping. | `5556` |
 | `prometheus.jmx.resources` | JMX Exporter resources configuration. | see [values.yaml](values.yaml) for details |
+
+### Running Custom Scripts
+
+| Parameter | Description | Default |
+| --------- | ----------- | ------- |
+| `customEnv.CUSTOM_SCRIPT_PATH` | Path to external bash script to run inside the container | see [values.yaml](values.yaml) for details |
+| `livenessProbe` | Requirement of `livenessProbe` depends on the custom script to be run  | see [values.yaml](values.yaml) for details |
 
 ### Deployment Topology
 
